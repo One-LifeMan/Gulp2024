@@ -1,0 +1,63 @@
+html {
+    scroll-behavior: smooth;
+    font-size: $mainFontSize;
+}
+
+body {
+    font-family: $mainFontFamily;
+    font-style: $mainFontStyle;
+    font-weight: $mainFontWeight;
+    line-height: $mainLineHeight;
+    color: $primaryText;
+    background-color: $primaryColor;
+}
+
+a {
+    color: inherit;
+    transition: 0.3s;
+
+    &:hover {
+        color: $accentColor;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: $primaryColor;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $lightPrimaryColor;
+    border-radius: 2px;
+}
+
+::-moz-scrollbar{
+    width: 4px;
+}
+
+::-moz-scrollbar-track{
+    background: $primaryColor;
+}
+
+::-moz-scrollbar-thumb{
+    background: $lightPrimaryColor;
+    border-radius: 2px;
+}
+
+img {
+    user-select: none;
+}
+
+.container {
+    max-width: $container * 1px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+*::selection {
+    color: $darkPrimaryColor;
+    background-color: $lightPrimaryColor;
+}

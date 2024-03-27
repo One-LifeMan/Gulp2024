@@ -1,0 +1,105 @@
+@use "sass:map";
+
+/* ЯК ЦЕ ПРАЦЮЄ:
+    - в $theme-blue та $theme-dark задаються кольори
+    - в залежності від того яка тема стоїть на ПК буде працювати 
+        відповідний медіазапит prefers-color-scheme
+    - але! якщо в html буде додано клас .theme-dark або інша, 
+        то тема змінеться відповідно - це для того щоб користувач міг 
+        сам обрати тему
+
+    - в даному випадку $theme-blue це світла тема
+*/
+
+$theme-blue: (
+    "darkPrimaryColor": #303F9F,
+    "primaryColor": #3F51B5,
+    "lightPrimaryColor": #C5CAE9,
+    "textIcons": #FFF,
+    "accentColor": #FF5722,
+    "primaryText": #212121,
+    "secondaryText": #757575,
+    "dividerColor": #BDBDBD,
+);
+$theme-dark: (
+    "darkPrimaryColor": #0d0d0d,
+    "primaryColor": #121212,
+    "lightPrimaryColor": #1c1c1c,
+    "textIcons": #fff,
+    "accentColor": #1176e9,
+    "primaryText": #fff,
+    "secondaryText": #ccc,
+    "dividerColor": #bdbdbd,
+);
+
+
+/* :root {
+    --dark-primary-color: #{map-get($theme-blue, "darkPrimaryColor" )};
+    --light-primary-color: #{map-get($theme-blue, "lightPrimaryColor" )};
+    --primary-color: #{map-get($theme-blue, "primaryColor" )};
+    --text-icons: #{map-get($theme-blue, "textIcons" )};
+    --accent-color: #{map-get($theme-blue, "accentColor" )};
+    --primary-text: #{map-get($theme-blue, "primaryText" )};
+    --secondary-text: #{map-get($theme-blue, "secondaryText" )};
+    --divider-color: #{map-get($theme-blue, "dividerColor" )};
+} */
+
+html.theme-blue {
+    --dark-primary-color: #{map-get($theme-blue, "darkPrimaryColor" )};
+    --light-primary-color: #{map-get($theme-blue, "lightPrimaryColor" )};
+    --primary-color: #{map-get($theme-blue, "primaryColor" )};
+    --text-icons: #{map-get($theme-blue, "textIcons" )};
+    --accent-color: #{map-get($theme-blue, "accentColor" )};
+    --primary-text: #{map-get($theme-blue, "primaryText" )};
+    --secondary-text: #{map-get($theme-blue, "secondaryText" )};
+    --divider-color: #{map-get($theme-blue, "dividerColor" )};
+}
+
+html.theme-dark {
+    --dark-primary-color: #{map-get($theme-dark, "darkPrimaryColor" )};
+    --light-primary-color: #{map-get($theme-dark, "lightPrimaryColor" )};
+    --primary-color: #{map-get($theme-dark, "primaryColor" )};
+    --text-icons: #{map-get($theme-dark, "textIcons" )};
+    --accent-color: #{map-get($theme-dark, "accentColor" )};
+    --primary-text: #{map-get($theme-dark, "primaryText" )};
+    --secondary-text: #{map-get($theme-dark, "secondaryText" )};
+    --divider-color: #{map-get($theme-dark, "dividerColor" )};
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dark-primary-color: #{map-get($theme-dark, "darkPrimaryColor" )};
+        --light-primary-color: #{map-get($theme-dark, "lightPrimaryColor" )};
+        --primary-color: #{map-get($theme-dark, "primaryColor" )};
+        --text-icons: #{map-get($theme-dark, "textIcons" )};
+        --accent-color: #{map-get($theme-dark, "accentColor" )};
+        --primary-text: #{map-get($theme-dark, "primaryText" )};
+        --secondary-text: #{map-get($theme-dark, "secondaryText" )};
+        --divider-color: #{map-get($theme-dark, "dividerColor" )};
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --dark-primary-color: #{map-get($theme-blue, "darkPrimaryColor" )};
+        --light-primary-color: #{map-get($theme-blue, "lightPrimaryColor" )};
+        --primary-color: #{map-get($theme-blue, "primaryColor" )};
+        --text-icons: #{map-get($theme-blue, "textIcons" )};
+        --accent-color: #{map-get($theme-blue, "accentColor" )};
+        --primary-text: #{map-get($theme-blue, "primaryText" )};
+        --secondary-text: #{map-get($theme-blue, "secondaryText" )};
+        --divider-color: #{map-get($theme-blue, "dividerColor" )};
+    }
+}
+
+/* це для зручності використання змінних */
+
+$darkPrimaryColor: var(--dark-primary-color);
+$lightPrimaryColor: var(--light-primary-color);
+$primaryColor: var(--primary-color);
+$textIcons: var(--text-icons);
+$accentColor: var(--accent-color);
+$primaryText: var(--primary-text);
+$secondaryText: var(--secondary-text);
+$dividerColor: var(--divider-color);
+$brRadius: 1.6rem;
