@@ -10,11 +10,4 @@
 @import "./base/tailwind";
 @import "./animations/*";
 @import "./modules/**/*";
-@import "./adaptive-styles/*";
-
-body {
-    padding: 10px;
-    background-color: black;
-
-    // padding: auto;
-}
+@import "./adaptive-styles/**/*";
