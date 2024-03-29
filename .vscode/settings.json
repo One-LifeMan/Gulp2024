@@ -1,96 +1,80 @@
 {
     // - Фикс бага "json ошибка" -
-    "http.proxySupport": "fallback",
-    "json.shemaDownload.enable": true,
+    // "http.proxySupport": "fallback",
+    // "json.shemaDownload.enable": true,
 
     //Вимикає підтвердження під час перетягування та викидання файлів у провіднику
     "explorer.confirmDragAndDrop": false,
-    "liveServer.settings.CustomBrowser": "brave",
-    "liveServer.settings.ChromeDebuggingAttachment": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "liveServer.settings.port": 0,
-    //Вимикає підсвічування неоднозначних символів Unicode в редакторі коду
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-
-    //Вмикає перенесення слова, щоб текст автоматично переносився на новий рядок, якщо він не поміщається в поточному рядку.
-    "editor.wordWrap": "off",
     //Вимикає компактний вигляд папок у провіднику проектів
     "explorer.compactFolders": false,
+    //Вимикає підсвічування неоднозначних символів Unicode в редакторі коду
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    //Вмикає перенесення слова, щоб текст автоматично переносився на новий рядок, якщо він не поміщається в поточному рядку.
+    "editor.wordWrap": "off",
     //Встановлює тип миготливості курсору
     "editor.cursorBlinking": "phase",
     //Вмикає миготливість курсору у терміналі.
     "terminal.integrated.cursorBlinking": true,
-    "window.density.editorTabHeight": "default",
-
-    // eCSSTractor - plugin
-    "ecsstractor_port.bem_nesting": true,
-    "ecsstractor_port.modifier_separator": "--",
-    "ecsstractor_port.empty_line_before_nested_selector": false,
-    "ecsstractor_port.add_comment": false,
-
-    // cSpell - plugin
-    "cSpell.language": "en,uk",
-    "cSpell.ignorePaths": [
-        ".vscode/**/*.json",
-        "node_modules",
-        "**/.stylelintrc.json",
-        "**/.eslintrc.json",
-        "**/.prettierignore",
-        "**/.prettierrc",
-        "**/.stylelintrc.json",
-        "**/package-lock.json",
-        "**/package.json",
-        "**/tsconfig.json",
-        "**/.htmlhintrc"
-    ],
-    "cSpell.userWords": ["stylelint"],
-
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    // "files.autoSave": "onFocusChange",
-
-    // "prettier.enable": true,
-    "prettier.requireConfig": true,
-    "prettier.ignorePath": ".prettierignore",
-    "prettier.configPath": ".prettierrc",
-    "prettier.useEditorConfig": true,
-    "prettier.withNodeModules": false,
-
-    // "eslint.enable": true,
-    // "eslint.probe": ["typescript"],
-    // "eslint.format.enable": true,
-    // "eslint.codeActionsOnSave.mode": "all",
-    // "[typescript]": {
-    //     "editor.codeActionsOnSave": {
-    //         "source.fixAll.eslint": true
-    //     }
-    // },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
-    },
-
-    // вимкнути вбудовані в vs code лінтери
-    "css.validate": false,
-    "less.validate": false,
-    // "scss.validate": false,
-    // "stylelint.enable": true,
-    "scss.lint.emptyRules": "ignore",
-    // підсвічує помилки
-    "stylelint.validate": ["scss"],
-    "[scss]": {
-        "editor.defaultFormatter": "stylelint.vscode-stylelint",
-        "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": "explicit"
-        }
-    },
-
-    // fonts
+    // термінал за замовчуванням
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    // шрифт
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "editor.lineHeight": 1.2,
     "debug.console.fontSize": 14,
     "terminal.integrated.fontSize": 12,
-
-    // - Отключаем не нужные Хлебные крошки -
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "italic font",
+                "scope": [
+                    "comment",
+                    "keyword",
+                    "storage",
+                    "keyword.control",
+                    "keyword.control.from",
+                    "keyword.control.flow",
+                    "keyword.operator.new",
+                    "keyword.control.import",
+                    "keyword.control.export",
+                    "keyword.control.default",
+                    "keyword.control.trycatch",
+                    "keyword.control.conditional",
+                    "storage.type",
+                    "storage.type.class",
+                    "storage.modifier.tsx",
+                    "storage.type.function",
+                    "storage.modifier.async",
+                    "variable.language",
+                    "variable.language.this",
+                    "variable.language.super",
+                    "meta.class",
+                    "meta.var.expr",
+                    "constant.language.null",
+                    "support.type.primitive",
+                    "entity.name.method.js",
+                    "entity.other.attribute-name",
+                    "punctuation.definition.comment",
+                    "text.html.basic entity.other.attribute-name",
+                    "tag.decorator.js entity.name.tag.js",
+                    "tag.decorator.js punctuation.definition.tag.js",
+                    "source.js constant.other.object.key.js string.unquoted.label.js"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    // висота вкладок
+    "window.density.editorTabHeight": "default",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tree.enableStickyScroll": true,
+    "workbench.tree.stickyScrollMaxItemCount": 7,
+    // автозбереження
+    "files.autoSave": "off",
+    // відключення зайвих хлібних крихт
     "breadcrumbs.icons": false,
     "breadcrumbs.showKeys": false,
     "breadcrumbs.showFiles": false,
@@ -120,21 +104,79 @@
     "breadcrumbs.showTypeParameters": false,
     "breadcrumbs.showVariables": false,
 
-    "scss.suggestVariables": true,
+    // === ПЛАГІНИ ===
 
-    "workbench.tree.enableStickyScroll": true,
-    "workbench.tree.stickyScrollMaxItemCount": 7,
-    "cSpell.words": [
-        "arrowdown",
-        "arrowleft",
-        "arrowright",
-        "arrowup",
-        "BTNS",
-        "Gameboard",
-        "PLAYFIELD",
-        "tetris",
-        "TETRO",
-        "tetromino",
-        "TETROMINOES"
-    ]
+    // liveServer - plugin
+    "liveServer.settings.CustomBrowser": "brave",
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.port": 0,
+    // eCSSTractor - plugin
+    "ecsstractor_port.bem_nesting": true,
+    "ecsstractor_port.element_separator": "__",
+    "ecsstractor_port.modifier_separator": "--",
+    "ecsstractor_port.empty_line_before_nested_selector": true,
+    "ecsstractor_port.add_comment": false,
+
+    // cSpell - plugin
+    "cSpell.language": "en,uk",
+    "cSpell.ignorePaths": [
+        ".vscode/**/*",
+        "node_modules",
+        "**/.stylelintrc.json",
+        "**/.eslintrc.json",
+        "**/.prettierignore",
+        "**/.prettierrc",
+        "**/.stylelintrc.json",
+        "**/package-lock.json",
+        "**/package.json",
+        "**/tsconfig.json",
+        "**/.htmlhintrc"
+    ],
+    "cSpell.userWords": [],
+    "cSpell.words": [],
+
+    // ЛІНТЕРИ
+    // вимкнути вбудовані в vs code лінтери
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "javascript.validate.enable": false,
+
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+
+    // prettier
+    "prettier.enable": true,
+    "prettier.requireConfig": true,
+    "prettier.ignorePath": ".prettierignore",
+    "prettier.configPath": ".prettierrc",
+    "prettier.useEditorConfig": true,
+    "prettier.withNodeModules": false,
+
+    // eslint
+    "eslint.enable": true,
+    "eslint.probe": ["javascript", "typescript"],
+    "[javascript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        }
+    },
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        }
+    },
+
+    // stylelint
+    "stylelint.enable": true,
+    // "scss.lint.emptyRules": "ignore",
+    // підсвічує помилки
+    "stylelint.validate": ["scss"],
+    "[scss]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": "explicit"
+        }
+    },
+
+    "scss.suggestVariables": true
 }

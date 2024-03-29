@@ -1,5 +1,5 @@
 {
-    "printWidth": 120,
+    "printWidth": 80,
     "tabWidth": 4,
     "useTabs": false,
     "semi": true,
@@ -14,7 +14,10 @@
     "endOfLine": "lf",
     "embeddedLanguageFormatting": "auto",
     "singleAttributePerLine": false,
-    "plugins": ["prettier-plugin-organize-attributes", "prettier-plugin-tailwindcss"],
+    "plugins": [
+        "prettier-plugin-organize-attributes",
+        "prettier-plugin-tailwindcss"
+    ],
     "attributeGroups": [
         "$CLASS",
         "$ID",

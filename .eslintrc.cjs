@@ -21,7 +21,8 @@ module.exports = {
     },
     rules: {
         "no-var": "error",
-        "max-len": 120,
+        "no-unused-vars": "warn",
+        // "max-len": ,
         "prettier/prettier": [
             "warn",
             {
