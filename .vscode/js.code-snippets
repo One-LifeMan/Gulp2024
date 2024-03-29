@@ -14,9 +14,9 @@
     // }
 
     "My Snippet": {
-        "scope": ["js", "ts"],
+        "scope": "js",
         "prefix": "alert",
         "body": ["alert($1);"],
-        "description": "My Snippet"
-    }
+        "description": "My Snippet",
+    },
 }
