@@ -1,4 +1,4 @@
-.loader {
+.preloader {
     position: fixed;
     top: 0;
     right: 0;
@@ -20,15 +20,15 @@
 
 .rect-1 {
     stroke: orange;
-    animation-name: loader-rect-1;
+    animation-name: preloader-rect-1;
 }
 
 .rect-2 {
     stroke: green;
-    animation-name: loader-rect-2;
+    animation-name: preloader-rect-2;
 }
 
 .rect-3 {
     stroke: blue;
-    animation-name: loader-rect-3;
+    animation-name: preloader-rect-3;
 }

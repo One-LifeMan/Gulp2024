@@ -1,6 +1,6 @@
 "use strict";
 
-import "./modules/_loader.js";
+import "./modules/_preloader.js";
 import "./modules/_i18n.js";
 import "@material/web/all.js";
 

@@ -7,11 +7,11 @@ function $All(selector) {
     return document.querySelectorAll(`${selector}`);
 }
 
-const LOADER = $(".loader");
+const PRELOADER = $(".preloader");
 
 // prettier-ignore
 export { 
     $, 
     $All, 
-    LOADER,
+    PRELOADER,
 };
