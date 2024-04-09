@@ -12,13 +12,3 @@ window.addEventListener("load", () => {
     PRELOADER.style.visibility = "hidden";
     document.body.style.overflow = "visible";
 });
-
-const validator = {
-    isValid(num) {
-        if (num > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    },
-};
