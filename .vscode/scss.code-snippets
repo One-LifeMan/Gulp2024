@@ -15,4 +15,10 @@
         ],
         "description": "My Snippet",
     },
+    "@for": {
+        "scope": "scss",
+        "prefix": "for",
+        "body": ["@for $$i from $1 through $2 {", "    $3", "}"],
+        "description": "My Snippet",
+    },
 }
