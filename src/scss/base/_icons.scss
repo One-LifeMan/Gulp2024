@@ -10,8 +10,10 @@
 //     font-display: block;font-displayfont-displayfont-displayfont-display
 // }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: icomoon !important;
     font-style: normal;
     font-weight: normal;
@@ -24,7 +26,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* .icon-down::before {
     content: "\e902";
