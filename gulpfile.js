@@ -14,16 +14,18 @@ import { json } from "./config/gulp-tasks/json.js";
 // prettier-ignore
 gulp.task(
     "build", gulp.series(
-        cleanDist, gulp.parallel(
-                html, 
-                css, 
-                js, 
+        cleanDist,
+        gulp.parallel(
                 img, 
                 fonts, 
                 sounds, 
                 locales, 
-                mustache,
-                json
+                mustache, 
+                json),
+        gulp.parallel(
+                html, 
+                css, 
+                js, 
             ), serve
         )
     );
