@@ -3,8 +3,8 @@ import gulp from "gulp";
 import plumber from "gulp-plumber"; // запобігайте розриву каналу через помилки плагінів gulp
 import { plumberNotify } from "./../gulp-plugins.js";
 import fileInclude from "gulp-file-include";
-import webpHTML from "gulp-webp-html";
-import htmlmin from "gulp-htmlmin";
+import imgToPicture from "gulp-html-img-to-picture";
+import htmlMin from "gulp-htmlMin";
 import environments from "gulp-environments";
 
 const fileIncludeSettings = {
@@ -22,17 +22,40 @@ function html() {
         gulp
             .src(SOURCE)
             // .pipe(changed(destination)) // !!! ламає роботу fileInclude
+            .pipe(fileInclude(fileIncludeSettings))
             .pipe(plumber(plumberNotify("HTML")))
-            .pipe(webpHTML())
+            .pipe(
+                imgToPicture({
+                    imgFolder: destination + "/img/", // required for sorting by size
+                    extensions: [".jpg", ".jpeg", ".png"],
+                    ignoreClassname: "img-ignore",
+                    ignoreAttribute: "data-ignore",
+                    pictureClassAttribute: "data-picture-class",
+                    logger: true,
+                    sortBySize: true,
+                    ignoreScripts: true,
+                    ignoreComments: true,
+                    filterUnexistedImages: false,
+                    sourceExtensions: [
+                        {
+                            extension: "avif",
+                            mimetype: "image/avif",
+                        },
+                        {
+                            extension: "webp",
+                            mimetype: "image/webp",
+                        },
+                    ],
+                }),
+            )
             .pipe(
                 production(
-                    htmlmin({
+                    htmlMin({
                         collapseWhitespace: true,
                         removeComments: true,
                     }),
                 ),
             )
-            .pipe(fileInclude(fileIncludeSettings))
             .pipe(gulp.dest(destination))
     );
 }
