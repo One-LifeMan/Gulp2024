@@ -10,5 +10,10 @@ import {
     Mustache
 } from "./constants/_libs.js";
 
+import ScrollAnimator from "./classes/ScrollAnimator.js";
+
+const scrollAnimator = new ScrollAnimator();
+scrollAnimator.init();
+
 // prettier-ignore
 export {  };
