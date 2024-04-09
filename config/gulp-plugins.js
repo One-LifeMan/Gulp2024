@@ -8,7 +8,9 @@ const { development, production } = environments;
 let destination = development() ? "dev" : "dist";
 
 function cleanDist() {
-    return gulp.src(destination, { read: false, allowEmpty: true }).pipe(clean({ force: true }));
+    return gulp
+        .src(destination, { read: false, allowEmpty: true })
+        .pipe(clean({ force: true }));
 }
 
 const plumberNotify = (title) => {
