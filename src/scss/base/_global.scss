@@ -12,6 +12,12 @@ body {
     background-color: $primaryColor;
 }
 
+.container {
+    max-width: $container;
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}
+
 a {
     color: inherit;
     transition: 0.3s;
@@ -21,8 +27,41 @@ a {
     }
 }
 
+h1 {
+    font-size: $h1FontSize;
+}
+
+h2 {
+    font-size: $h2FontSize;
+}
+
+h3 {
+    font-size: $h3FontSize;
+}
+
+h4 {
+    font-size: $h4FontSize;
+}
+
+h5 {
+    font-size: $h5FontSize;
+}
+
+h6 {
+    font-size: $h6FontSize;
+}
+
+img {
+    user-select: none;
+}
+
+*::selection {
+    color: $darkPrimaryColor;
+    background-color: $lightPrimaryColor;
+}
+
 ::-webkit-scrollbar {
-    width: 4px;
+    width: $scrollbarWidth;
 }
 
 ::-webkit-scrollbar-track {
@@ -31,33 +70,18 @@ a {
 
 ::-webkit-scrollbar-thumb {
     background: $lightPrimaryColor;
-    border-radius: 2px;
+    border-radius: $scrollbarBorderRadius;
 }
 
-::-moz-scrollbar{
-    width: 4px;
+::-moz-scrollbar {
+    width: $scrollbarWidth;
 }
 
-::-moz-scrollbar-track{
+::-moz-scrollbar-track {
     background: $primaryColor;
 }
 
-::-moz-scrollbar-thumb{
+::-moz-scrollbar-thumb {
     background: $lightPrimaryColor;
-    border-radius: 2px;
-}
-
-img {
-    user-select: none;
-}
-
-.container {
-    max-width: $container * 1px;
-    padding: 0 10px;
-    margin: 0 auto;
-}
-
-*::selection {
-    color: $darkPrimaryColor;
-    background-color: $lightPrimaryColor;
+    border-radius: $scrollbarBorderRadius;
 }

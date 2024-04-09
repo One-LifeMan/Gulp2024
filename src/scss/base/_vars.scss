@@ -1,11 +1,21 @@
-$container: 1220;
+$maxViewport: 1920;
+$minViewport: 320;
+$container: 1220px;
+$containerPadding: 10px;
 
+/* BORDERS */
+$btnBorderRadius: 1.6rem;
 
+/* SCROLLBAR */
+$scrollbarWidth: 8px;
+$scrollbarBorderRadius: 4px;
 
-
-
-
-
+/* SPACINGS */
+$spacing-xs: 0.9rem; // 15px
+$spacing-sm: 1.3rem; // 20px
+$spacing-md: 2rem; // 32px
+$spacing-lg: 4rem; // 64px
+$spacing-xl: 6rem; // 100px
 
 /* FONT */
 $mainFontFamily: "Roboto";
@@ -13,4 +23,18 @@ $mainFontSize: 16px;
 $mainFontStyle: normal;
 $mainFontWeight: 400;
 $mainLineHeight: 1;
+$h1FontSize: 5rem; // 100px
+$h2FontSize: 3.2rem; // 64px
+$h3FontSize: 1.6rem; // 32px
+$h4FontSize: 1.2rem; // 24px
+$h5FontSize: 0.95rem; // 19px
+$h6FontSize: 0.8rem; // 16px
 
+@mixin get-font-size($min, $max) {
+    font-size: clamp(
+        $min * 1px,
+        $min * 1px + ($max - $min) *
+            ((100vw - $minViewport * 1px) / ($maxViewport - $minViewport)),
+        $max * 1px
+    );
+}
