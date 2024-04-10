@@ -2,7 +2,7 @@
     "name": "gulp-2024",
     "version": "0.1",
     "description": "",
-    "homepage": "https://one-lifeman.github.io/Gulp2024", 
+    "homepage": "https://one-lifeman.github.io/Gulp2024/",
     "private": true,
     "type": "module",
     "scripts": {
