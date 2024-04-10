@@ -7,11 +7,12 @@ import changed from "gulp-changed"; // визначає чи змінилися 
 import plumber from "gulp-plumber"; // запобігайте розриву каналу через помилки плагінів gulp
 import sassGlob from "gulp-sass-glob"; // плагін для gulp-sass для використання глобального імпорту
 import { plumberNotify } from "./../gulp-plugins.js";
-import webpCss from "gulp-webp-css-fixed";
 import postcss from "gulp-postcss";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano"; // Minify CSS
+
+import webpInCss from "webp-in-css/plugin.js";
 
 const sass = gulpSass(dartSass);
 const { development, production } = environments;
@@ -19,10 +20,11 @@ const { development, production } = environments;
 const SOURCE = ["./src/scss/**/*.{scss, css}"];
 let destination = development() ? "dev/css" : "dist/css";
 
-const postCssPluginsDev = [tailwindcss("./tailwind.config.js")];
+const postCssPluginsDev = [tailwindcss("./tailwind.config.js"), webpInCss({})];
 const postCssPluginsProd = [
     tailwindcss("./tailwind.config.js"),
     autoprefixer(),
+    webpInCss({}),
     cssnano(),
 ];
 
@@ -34,7 +36,6 @@ function css() {
         .pipe(development(sourcemaps.init()))
         .pipe(sassGlob())
         .pipe(sass().on("error", sass.logError))
-        .pipe(webpCss())
         .pipe(development(postcss(postCssPluginsDev)))
         .pipe(production(postcss(postCssPluginsProd)))
         .pipe(development(sourcemaps.write()))
